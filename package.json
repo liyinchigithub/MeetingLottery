@@ -1,0 +1,47 @@
+{
+  "name": "meeting-lottery",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ MeetingLottery  --out ./dist/MeetingLottery-release --overwrite --icon=./images/app.ico",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win --x64",
+    "dist:linux": "electron-builder --linux"
+  },
+  "author": "jack<liyinchi@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "log4js": "^3.0.6"
+  },
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^13.0.1"
+  },
+  "build": {
+    "appId": "com.xxx.app",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "./images/app.icns"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "./images/app.ico"
+    },
+    "linux": {
+      "target": [
+        "tar.xz",
+        "zip"
+      ],
+      "icon": "./images/app.icns"
+    }
+  }
+}
